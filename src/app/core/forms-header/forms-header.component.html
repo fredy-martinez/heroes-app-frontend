@@ -1,0 +1,25 @@
+<div
+  class="w-full border-top-3 border-primary mb-4 md:mb-6 border-round overflow-hidden surface-50 animate__animated animate__fadeIn"
+>
+  <div class="grid p-2 md:p-4">
+    <div class="col-12 md:col-6 xl:col-8">
+      <div class="w-full">
+        <p class="text-3xl font-medium text-800">{{ title }}</p>
+        <p class="text-600 m-0">
+          {{ description }}
+        </p>
+      </div>
+    </div>
+    <div
+      class="col-12 md:col-6 xl:col-4 flex justify-content-center md:justify-content-end"
+    >
+      <img
+        [src]="image"
+        alt="ICONO"
+        width="128px"
+        style="object-fit: contain"
+      />
+    </div>
+  </div>
+</div>
+
