@@ -7,12 +7,13 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FileUploadModule } from 'primeng/fileupload';
-import { FormsHeaderComponent } from '../../../../core/forms-header/forms-header.component';
+import { FormsHeaderComponent } from '../../../../core/components/forms-header/forms-header.component';
+import { DropdownModule } from 'primeng/dropdown';
 
 @Component({
   selector: 'app-create-hero-form',
   standalone: true,
-  imports: [CardModule, CalendarModule, CommonModule, FormsHeaderComponent, ButtonModule, FileUploadModule, ReactiveFormsModule, InputTextModule, InputTextareaModule],
+  imports: [CardModule, CalendarModule, CommonModule, FormsHeaderComponent, ButtonModule, FileUploadModule, ReactiveFormsModule, InputTextModule, InputTextareaModule, DropdownModule],
   templateUrl: './create-hero-form.component.html',
   styleUrl: './create-hero-form.component.scss'
 })
@@ -32,10 +33,10 @@ export class CreateHeroFormComponent {
     this.createHeroForm = this._fb.group({
       nombre_real: ['', Validators.required],
       nombre_personaje: ['', Validators.required],
-      primera_aparicion: [Validators.required],
+      primera_aparicion: [new Date(),Validators.required],
       descripcion:['',Validators.required],
-      imagen:[Validators.required]
-
+      categoria: [Validators.required],
+      creador: [Validators.required]
     })
   }
 

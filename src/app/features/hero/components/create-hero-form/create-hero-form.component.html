@@ -1,100 +1,107 @@
-<p-card mt-3>
+<p-card>
 
   <div class="col-12">
     <app-forms-header
       title="Crear Superheroe"
       description="En este fomulario ingresa tu super heroe favorito"
-      image="assets/images/batman.png">
+      image="assets/images/dc-logo.png">
     </app-forms-header>
   </div>
 
   <form
-  class="formgrid grid"
-  [formGroup]="createHeroForm"
-  (ngSubmit)="onSubmit()">
+    class="formgrid grid"
+    [formGroup]="createHeroForm"
+    (ngSubmit)="onSubmit()"
+  >
 
-  <!--! Nombre real -->
-  <div class="field col-12 md:col-6">
-    <label for="nombre_real" class="font-bold">Nombre</label>
-    <input
-      class="w-full"
-      id="nombre_real"
-      [maxLength]="80"
-      type="text"
-      pInputText
-      formControlName="nombre_real"
-    />
-  </div>
+    <!--! Nombre real -->
+    <div class="field col-12 md:col-6">
+      <label for="nombre_real" class="font-bold">Nombre</label>
+      <input
+        class="w-full"
+        id="nombre_real"
+        [maxLength]="80"
+        type="text"
+        pInputText
+        formControlName="nombre_real"
+        placeholder="Bruce Wayne"
+      />
+    </div>
 
-  <!--! Nombre del personaje -->
-  <div class="field col-12 md:col-6">
-    <label for="nombre_personaje" class="font-bold">Alter ego</label>
-    <input
-      class="w-full"
-      id="nombre_personaje"
-      [maxLength]="80"
-      type="text"
-      pInputText
-      formControlName="nombre_personaje"
-    />
-  </div>
+    <!--! Nombre del personaje -->
+    <div class="field col-12 md:col-6">
+      <label for="nombre_personaje" class="font-bold">Alter ego</label>
+      <input
+        class="w-full"
+        id="nombre_personaje"
+        [maxLength]="80"
+        type="text"
+        pInputText
+        formControlName="nombre_personaje"
+        placeholder="Batman"
+      />
+    </div>
 
-  <!--! Aparicion -->
-  <div class="field col-12 lg:col-12 md:col-12 sm:col-12">
-    <label for="primera_aparicion" class="font-bold">Primera aparición</label>
-    <p-calendar
-      id="primera_aparicion"
+    <!--! Aparicion -->
+    <div class="field col-6 lg:col-6 md:col-6 sm:col-12">
+      <label for="primera_aparicion" class="font-bold">Primera aparición</label>
+      <p-calendar
+        id="primera_aparicion"
+        styleClass="w-full"
+        inputStyleClass="w-full"
+        appendTo="body"
+        formControlName="primera_aparicion"
+        dateFormat="dd/mm/yy">
+      </p-calendar>
+    </div>
+
+    <!--! Categoría -->
+    <div class="field col-12 lg:col-6 md:col-6 sm:col-12">
+      <label for="categoria" class="font-bold">Categoría</label>
+      <p-dropdown
       styleClass="w-full"
-      inputStyleClass="w-full"
-      appendTo="body"
-      placeholder="20/2/2024"
-      formControlName="primera_aparicion"
-      dateFormat="dd/mm/yy">
-    </p-calendar>
-  </div>
+      placeholder="Selecciona la categoría"
+      formControlName="categoria">
+      </p-dropdown>
+    </div>
 
-  <!--! Descripción-->
-  <div class="field col 12">
-    <label for="descripcion" class="font-bold">Descripción</label>
-    <textarea
-      class="w-full"
-      id="descripcion"
+    <!--! franquicia -->
+    <div class="field col-6 lg:col-12 md:col-12 sm:col-12">
+      <label for="creador" class="font-bold">Franquicia</label>
+      <p-dropdown
       styleClass="w-full"
-      rows="5"
-      cols="30"
-      pInputTextarea
-      formControlName="descripcion">
-    </textarea>
-  </div>
+      placeholder="Selecciona la franquicia"
+      formControlName="creador">
+      </p-dropdown>
+    </div>
 
-  <!--! Imagen-->
-  <div class="field col-12">
-    <label for="imagen" class="font-bold">Imagen</label>
-    <p-fileUpload
-    class="w-full"
-    styleClass="w-full"
-    id="imagen"
-    mode="basic"
-    chooseLabel="Choose"
-    name="demo[]"
-    url="https://www.primefaces.org/cdn/api/upload.php"
-    accept="image/*"
-    >
-    <!-- maxFileSize="1000000"
-    (onUpload)="onUpload($event) -->
-  </p-fileUpload>
-  </div>
+    <!--! Descripción-->
+    <div class="field col-12">
+      <label for="descripcion" class="font-bold">Descripción</label>
+      <textarea
+        class="w-full"
+        id="descripcion"
+        styleClass="w-full"
+        rows="5"
+        cols="30"
+        pInputTextarea
+        formControlName="descripcion"
+        placeholder="El señor de la noche">
+      </textarea>
+    </div>
 
-  <!--! Guardar -->
-  <div class="field col-12">
-    <p-button
-      class="w-full"
-      styleClass="w-full"
-      label="Guardar"
-      icon="pi pi-save"
-      iconPos="right">
-    </p-button>
-  </div>
+    <!--! Guardar -->
+    <div class="field col-12">
+      <p-button
+        class="w-full"
+        styleClass="w-full"
+        label="Guardar"
+        icon="pi pi-save"
+        iconPos="right"
+        severity="success"
+        [rounded]="true">
+      </p-button>
+    </div>
 
   </form>
 </p-card>
