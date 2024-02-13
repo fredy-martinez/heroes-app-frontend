@@ -13,6 +13,10 @@ export const featureRoute: Routes = [
     component: FeaturesComponent,
     children: [
       {
+        path:'',
+        loadComponent: () => import('./home/pages/home-page/home-page.component').then( (c) => c.HomePageComponent)
+      },
+      {
         path:'hero',
         children: heroRoutes,
       }
