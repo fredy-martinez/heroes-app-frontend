@@ -35,8 +35,8 @@ export class CreateHeroFormComponent {
       nombre_personaje: ['', Validators.required],
       primera_aparicion: [new Date(),Validators.required],
       descripcion:['',Validators.required],
-      categoria: [Validators.required],
-      creador: [Validators.required]
+      id_categoria: [Validators.required],
+      id_franquicia: [Validators.required]
     })
   }
 
