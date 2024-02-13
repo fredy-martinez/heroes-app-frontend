@@ -1,9 +1,8 @@
 <p-sidebar [(visible)]="sidebarVisible">
     <ng-template pTemplate="header" class="font-bold">Menú Principal</ng-template>
 
-    @for (item of sidebarItems; track $index) {
-        <div>{{item.label}}</div>
-    }
-
+    <div class="card flex justify-content-center">
+        <p-menu [model]="items"></p-menu>
+    </div>
 </p-sidebar>
 <p-button (click)="sidebarVisible = true" icon="pi pi-align-justify"></p-button>
